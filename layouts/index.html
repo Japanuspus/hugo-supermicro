@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ "<!-- begin main@layouts/index.html -->" | safeHTML }}
+<main>
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  <h3>Site sections:</h3>
+  {{ range .Sections }}
+  <li>
+    <a href="{{.Permalink}}">{{.Title}}</a>
+  </li>
+  {{ end }}
+</main>
+{{ "<!-- end main@layouts/index.html -->" | safeHTML }}
+{{ end }}
+{{ define "addscripts"}}
+{{ "<!-- begin addscripts@layouts/index.html -->" | safeHTML }}
+{{ "<!-- end addscripts@layouts/index.html -->" | safeHTML }}
+{{end}}
