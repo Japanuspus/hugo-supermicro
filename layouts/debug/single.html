@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ "<!-- begin layouts/debug/single.html -->" | safeHTML }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+<h2>This is all the context avaiable from within hugo when rendering a page</h2>
+<pre>
+{{ printf "%#v" . }}
+</pre>
+
+<h2>Site context</h2>
+<pre>
+{{ printf "%#v" $.Site }}
+</pre>
+
+<h2>Resources</h2>
+
+{{ with .Resources.Match "*" }}
+<h3>Resource: </h3>
+<pre>
+{{ printf "%#v" . }}
+</pre>{{ end }}
+
+{{ with .Resources.ByType "image" }}
+<h3>Image: </h3>
+<pre>
+{{ printf "%#v" . }}
+</pre>
+{{ end }}
+
+{{ "<!-- end layouts/debug/single.html -->" | safeHTML }}
+{{ end }}
