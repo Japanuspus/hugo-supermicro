@@ -2,3 +2,4 @@ title: Hugo supermicro
 description: A minimal Hugo site demonstrating template system
 defaultContentLanguage: en
 
+theme: supermicro
