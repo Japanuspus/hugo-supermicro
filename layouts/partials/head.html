@@ -1,8 +1,34 @@
 {{ "<!-- begin layouts/partials/head.html -->" | safeHTML }}
 <meta charset="utf-8">
-<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ .Hugo.Generator }}
+
+
+{{ if eq .URL "/" }}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="website">
+{{ else }}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+{{ end }}
+
+
+{{ if .Keywords }}
+<meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+{{ end }}
+
+
+{{ "<!-- adding any css files from page ressources  -->" | safeHTML }}
+{{ range .Resources.Match "**.css" }}
+<link rel="stylesheet" href="{{ .Permalink }}">
+{{ end }}
+
 {{ "<!-- adding any custom css files specified in the params section of config.yaml -->" | safeHTML }}
-{{ range .Site.Params.custom_css -}}
+{{ range .Site.Params.custom_css }}
 <link rel="stylesheet" href="{{ . | absURL }}">
-{{- end }}
+{{ end }}
+
+<link rel="stylesheet" href="/css/bootstrap-reboot.css">
+
 {{ "<!-- end layouts/partials/head.html -->" | safeHTML }}
