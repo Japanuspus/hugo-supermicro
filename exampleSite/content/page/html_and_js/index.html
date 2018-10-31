@@ -4,18 +4,4 @@ date: 2018-10-01
 ---
 
 <h2>Custom cookie clicker</h2>
-<p>Cookies: <span id=cookiecount>0</span></p>
-
-<script language="JavaScript">
-var cookies = 0;
-var el = document.getElementById('cookiecount');
-function addCookie( ) {
-  // One more cookie
-  cookies = cookies+1;
-  // Update the page
-  // If we forget to do this, the displayed number will not match the variable.
-  // Front-end frameworks like [vue](https://vuejs.org/) help by doing this automatically.
-  el.textContent = cookies;
-}
-el.addEventListener('click', addCookie)
-</script>
+<button class="cookiebutton" id="cookiebutton">Cookies: <span id=cookiecount>0</span></button>
