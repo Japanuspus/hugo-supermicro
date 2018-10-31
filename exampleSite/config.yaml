@@ -1,5 +1,14 @@
-title: Hugo supermicro
+title: Hugo supermicro demo
 description: A minimal Hugo site demonstrating template system
 defaultContentLanguage: en
 
 theme: supermicro
+
+# To ad custom css, include the relevant files in the
+# static folder of your site, and include the names here
+# to add links to front matter
+# params:
+#   custom_css:
+#     - 'css/foo.css'
+#     - 'css/bar.css'
+

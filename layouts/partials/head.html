@@ -1,4 +1,8 @@
 {{ "<!-- begin layouts/partials/head.html -->" | safeHTML }}
 <meta charset="utf-8">
 <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+{{ "<!-- adding any custom css files specified in the params section of config.yaml -->" | safeHTML }}
+{{ range .Site.Params.custom_css -}}
+<link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}
 {{ "<!-- end layouts/partials/head.html -->" | safeHTML }}
