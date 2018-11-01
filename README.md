@@ -2,6 +2,7 @@
 # HUGO supermicro
 
 A bare-minimum [hugo][]-site aiming to demonstrate key aspects of template system.
+The repository site is graciously rendered and hosted at [hugo-supermicro.netlify.com](https://hugo-supermicro.netlify.com/) by the nice people at [netlify](https://netlify.com).
 
 ## Features
 
