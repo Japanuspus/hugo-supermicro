@@ -1,17 +1,12 @@
 {{ "<!-- begin layouts/partials/default_scripts.html -->" | safeHTML }}
 
-{{ "<!-- .js files includes from params.custom_js in config.yaml -->" | safeHTML }}
-{{ range .Site.Params.custom_js }}
-  <script defer src="{{ .Permalink }}"></script>
-{{ end }}
-
 
 {{ "<!-- .js files includes page bundle -->" | safeHTML }}
 <!-- By sorting resources according to name, order can be controlled by asingning names from front matter-->
 {{ with .Resources.Match "**.js" }}
-  {{ range sort . "Name"}}
+  {{ range sort . "Name" -}}
   <script defer src="{{ .Permalink }}"></script>
-  {{ end }}
+  {{- end }}
 {{ end }}
 
 {{ "<!-- end layouts/partials/default_scripts.html -->" | safeHTML }}

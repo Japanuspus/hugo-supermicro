@@ -20,14 +20,10 @@
 
 
 {{ "<!-- adding any css files from page ressources  -->" | safeHTML }}
-{{ range .Resources.Match "**.css" }}
+{{ range .Resources.Match "**.css" -}}
 <link rel="stylesheet" href="{{ .Permalink }}">
-{{ end }}
+{{- end }}
 
-{{ "<!-- adding any custom css files specified in the params section of config.yaml -->" | safeHTML }}
-{{ range .Site.Params.custom_css }}
-<link rel="stylesheet" href="{{ . | absURL }}">
-{{ end }}
 
 <link rel="stylesheet" href="/css/bootstrap-reboot.css">
 
