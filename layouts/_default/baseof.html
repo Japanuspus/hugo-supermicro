@@ -1,27 +1,29 @@
 <!--
-    The -baseof templates are used when a page template starts with 
-    a `define` macro. 
+  The -baseof templates are used when a page template starts with 
+  a `define` macro. 
 -->
 <!DOCTYPE html>
 <html>
-    {{ "<!-- begin layouts/_default/baseof.html -->" | safeHTML }}
-    <head>
-        {{partial "head.html" .}}
-    </head> 
-    <body>
-        <header>
-        {{partial "header.html" .}}
-        </header>
-        <!-- The page templates will define a meaningfull main block -->
-        <main>
-        {{block "main" . }}{{ end }}
-        </main>
-        <footer>
-        {{partial "footer.html" .}}
-        </footer>
-        <!-- most page templates will not define addscripts -- but now they can: -->
-        {{block "addscripts" .}}{{end}}
-        {{partial "footer_scripts.html" .}}
-    </body>
-    {{ "<!-- end layouts/_default/baseof.html -->" | safeHTML }}
+  {{ "<!-- begin layouts/_default/baseof.html -->" | safeHTML }}
+  <head>
+    {{partial "head.html" .}}
+  </head> 
+  <body>
+    <header>
+    {{partial "header.html" .}}
+    </header>
+    <!-- The page templates will define a meaningfull main block -->
+    <main>
+    {{block "main" . }}{{ end }}
+    </main>
+    <footer>
+    {{partial "footer.html" .}}
+    </footer>
+    <!-- most page templates will not define addscripts -- but now they can: -->
+    <div class="footer scripts">
+    {{block "addscripts" .}}{{end}}
+    {{partial "footer_scripts.html" .}}
+    </div>
+  </body>
+  {{ "<!-- end layouts/_default/baseof.html -->" | safeHTML }}
 </html>

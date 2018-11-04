@@ -6,9 +6,8 @@
          width="{{ .Site.Params.logo.width }}" 
          height="{{ .Site.Params.logo.height }}" 
          alt="{{ .Site.Params.logo.alt }}">
-    {{ else }}
-    Home
     {{ end }}
+    <span class="nav-title">{{ .Site.Title}}</span>
   </a>
 
   <ul class="nav-links">
