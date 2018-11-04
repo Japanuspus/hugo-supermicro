@@ -9,7 +9,7 @@
         {{partial "head.html" .}}
     </head> 
     <body>
-        <header class="page-header">
+        <header>
         {{partial "header.html" .}}
         </header>
         <!-- The page templates will define a meaningfull main block -->
@@ -21,7 +21,7 @@
         </footer>
         <!-- most page templates will not define addscripts -- but now they can: -->
         {{block "addscripts" .}}{{end}}
-        {{partial "default_scripts.html" .}}
+        {{partial "footer_scripts.html" .}}
     </body>
     {{ "<!-- end layouts/_default/baseof.html -->" | safeHTML }}
 </html>

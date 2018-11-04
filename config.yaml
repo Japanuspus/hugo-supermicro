@@ -3,3 +3,12 @@ Description: A minimal Hugo site demonstrating template system
 defaultContentLanguage: en
 
 
+#menu:
+#  main:
+#  - identifier: about 
+#    name: About
+#    url: /about/
+#  - identifier: home
+#    name: Home
+#    url: /
+
