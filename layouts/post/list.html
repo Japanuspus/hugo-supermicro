@@ -7,10 +7,11 @@
     </article>
 
     <ul>
-    {{ range .Pages }}
-        <li>
-            <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-        </li>
+    {{ range .Pages.GroupByDate "2006" }}
+        <h3>{{ .Key  }}</h3>
+        {{ range .Pages -}}
+            <li><a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a></li>
+        {{- end }}
     {{ end }}
     </ul>
 </main>
