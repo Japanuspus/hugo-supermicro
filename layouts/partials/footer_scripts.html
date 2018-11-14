@@ -1,0 +1,12 @@
+{{ "<!-- begin layouts/partials/footer_scripts.html -->" | safeHTML }}
+
+
+{{ "<!-- .js files included from page bundle -->" | safeHTML }}
+<!-- By sorting resources according to name, order can be controlled by asingning names from front matter-->
+{{ with .Resources.Match "**.js" }}
+  {{ range sort . "Name" -}}
+  <script defer src="{{ .Permalink }}"></script>
+  {{- end }}
+{{ end }}
+
+{{ "<!-- end layouts/partials/footer_scripts.html -->" | safeHTML }}
